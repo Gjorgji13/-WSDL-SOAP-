@@ -1,8 +1,31 @@
-Процесот на имплементација беше следниот:
-Парсирање на WSDL фајлот: Скриптата користи Zeep библиотека која овозможува лесно парсирање на WSDL фајлови и извлекување на информации како што се операции, параметри и типови на податоци дефинирани во WSDL. За ова е користен клиент од Zeep кој ја валидира WSDL структурата.
-Генерирање на SOAP пораки: Скриптата автоматски генерира примери на SOAP пораки за секоја операција дефинирана во WSDL. Генерирањето на SOAP пораки се врши преку додавање на операцијата во SOAP енвелопот, а параметрите се поставуваат на нивните default вредности или на вредностите што ги постави корисникот.
-Генерирање на WSDL документација
-Крајниот резултат на проектот е создавање две форми на документација:
-WSDL - стил документација која е генерирана во формат сличен на оригиналниот WSDL фајл.
-Читлива документација која е дизајнирана да биде лесно разбирлива и да ги опишува операциите, параметрите и типовите на податоци.
-За секој WSDL фајл генерирана е XML документација која ја опишува структурата на веб услугата, операциите и типовите на податоци.
+# WSDL Documentation Generator
+
+This project parses Web Services Description Language (WSDL) files and generates documentation in both WSDL-styled and human-readable formats.  It's designed to help developers understand and interact with SOAP-based web services.
+
+## Features
+
+*   **WSDL Parsing:**  Parses WSDL files using the `zeep` library.  Performs basic WSDL validation.
+*   **Documentation Generation:**  Creates two types of documentation:
+    *   **WSDL-styled Documentation:**  This output mimics the structure of a WSDL file, embedding parsed data within WSDL-like tags.
+    *   **Human-Readable Documentation:** A more easily understood format with clear descriptions of services, ports, operations, inputs, outputs, and types.
+*   **Data Extraction:** Extracts key information including:
+    *   Service names
+    *   Port names
+    *   Operation names
+    *   Documentation for operations
+    *   Input and output parameters (names, types, required status)
+    *   SOAP Actions
+    *   Complex and simple types
+
+## Prerequisites
+
+*   **Python 3.7+**
+*   **Required Libraries:**
+    *   `zeep`: For parsing the WSDL file.
+    *   `lxml`: For XML processing.
+    *   Other dependencies handled by `zeep`
+
+You can install the required libraries using pip:
+
+```bash
+pip install zeep lxml
